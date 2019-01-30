@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import Header from "./components/Header";
 //import TodoList from './components/TodoList';
-import Timer from './components/Timer';
+//import Timer from './components/Timer';
 
 /*
 const data = [
@@ -37,28 +38,31 @@ class App extends Component {
     }, 10000);
   }
 */
+
+  /*
   handleComplete = () => {
     this.setState({
       isUnmount:false
     });
   }
-
+*/
   render() {
     return (
       <div className="App">
-
-        {this.state.isUnmount &&
-          <Timer expireDate={'2019-01-30T14:57:00+09:00'} onComplete={this.handleComplete}/>
-        }
+        <Header/>
       </div>
     );
   }
 }
 
 /*
-          <TodoList title={"강의목표"}
-                 items={data} isUnmount={this.state.isUnmount}
-          />
+{this.state.isUnmount &&
+          <Timer expireDate={'2019-01-30T14:57:00+09:00'} onComplete={this.handleComplete}/>
+        }
+
+         <TodoList title={"강의목표"}
+                  items={data} isUnmount={this.state.isUnmount}
+        />
 */
 
 export default App;
