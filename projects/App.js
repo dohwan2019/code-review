@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.less';
 import MarkEditor from "./components/MarkEditor";
 import ControlledForm from "./components/ControlledForm"
 //import Header from "./components/Header";
