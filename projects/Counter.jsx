@@ -7,24 +7,22 @@ class Counter extends PureComponent {
     super(props);
 
     this.count = 0;
-    this.state = {
+    this.ff = {
       open: false,
       list: [1, 2, 3, 4, 5],
     };
   }
 
   handleClick = e => {
-    const {list} = this.state;
+    const {list} = this.ff;
     let num = Math.random() * 1000;
     num = Math.ceil(num);
     console.log(num);
     list.push(num);
 
-    this.setState({
-      list: list,
-    });
+    this.ff.list=list;
 
-    this.forceUpdate();
+
   };
 
   render() {
@@ -32,7 +30,7 @@ class Counter extends PureComponent {
     return (
       <div className="Counter">
         <header className="App-header">
-          {this.state.list.map((item, idx) => {
+          {this.ff.list.map((item, idx) => {
             return <div>{item}</div>;
           })}
           <Button onClick={this.handleClick}>카운터</Button>
