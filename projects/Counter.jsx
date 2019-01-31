@@ -19,16 +19,16 @@ class Counter extends PureComponent {
     num = Math.ceil(num);
     console.log(num);
 
-    let templist = [];
+    let tempList = [];
 
     for (let i = 0; i < 5; i++) {
       if (list[i] % 2 !== 0) {
-        templist[templist.length]=list[i];
+        tempList[tempList.length]=list[i];
       }
     }
 
     this.setState({
-      list: [...templist],
+      list: tempList,
     });
   };
 
