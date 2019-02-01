@@ -12,6 +12,18 @@ class TodoListItem extends React.Component {
 
     console.log(parentNode, fChild, sChild);
 
+    let show = document.getElementsByClassName('show');
+
+    for(let i=0; i<show.length;i++) {
+      show.item(i).style.display='inline';
+    }
+
+    let hidden = document.getElementsByClassName('hidden');
+
+    for(let i=0; i<hidden.length;i++) {
+      hidden.item(i).style.display='none';
+    }
+
     fChild.style.display = 'none';
     sChild.style.display = 'inline';
   }
@@ -38,7 +50,7 @@ class TodoListItem extends React.Component {
         <Checkbox defaultChecked={completed} />
 
         <span id={`nm${idx}`}>
-          <span>{name}</span>
+          <span className='show'>{name}</span>
           <Input
             className='hidden'
             defaultValue={name}

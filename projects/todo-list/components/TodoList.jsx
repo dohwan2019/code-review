@@ -19,22 +19,34 @@ class TodoList extends React.Component {
     console.log('TODO LiST unmount');
   }
 
-  handleTitleClick() {
+  handleTextEnter = e => {
     console.log('click', this);
+    const {addCall} = this.props;
+    addCall(e.target.value);
+
+    this.input.current.setState({
+      value:''
+    })
+  }
+
+  constructor(props) {
+    super(props);
+
+    this.input = React.createRef();
+    console.log(this.input);
   }
 
   render() {
     console.log('TODO LIST render');
 
-    const {items, addCall, onDelete, onEdit} = this.props;
+    const {items, onDelete, onEdit} = this.props;
 
     return (
       <div className="TodoList">
         <div>
           <Input
-            onPressEnter={e=>{
-              addCall(e.target.value);
-            }}
+            ref={this.input}
+            onPressEnter={this.handleTextEnter}
             addonAfter={<Icon type="plus" />} />
         </div>
 
